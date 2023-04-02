@@ -10,12 +10,14 @@
     <link href="css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Register1!</title>
+    <title>Register!</title>
 </head>
 
 <body>
     <header>
     <p>Index <a href="index.php">Click here</a></p>
+    <p>Register1<a href="regis1.php">Click here</a></p>
+    <p>Prodect<a href="pro1.php">Click here</a></p>
     </header>
     <div class="container">
         

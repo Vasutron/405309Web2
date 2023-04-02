@@ -22,16 +22,57 @@
             <!--// แถว 1 -->
             <label class="col-sm-3 col-form-label">Customer_ID :</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="Customer_ID" value="example">
+                <input type="text" class="form-control" id="cus_id" value="example">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Title :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="cus_title">
             </div>
         </div>
         <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Name :</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="Customer_Name">
+                <input type="text" class="form-control" id="cus_fname">
             </div>
         </div>
-
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Last name :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="cus_lname">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Address :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="cus_addr">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Tel :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="cus_tel">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">User :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="cus_uesr">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Password :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="cus_pass">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Picture :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="cus_pic">
+            </div>
+        </div>
     </div>
 
     <!-- Optional JavaScript! -->

@@ -18,9 +18,16 @@
 </head>
 
 <body>
+    <header>
+        <p>Index <a href="index.php">Click here</a></p>
+        <p>Register1<a href="regis1.php">Click here</a></p>
+        <!-- <p>For repairmen. <a href="">Login Repairmen</a>.</p> -->
+        ข้อมูลในแท็ก header
+    </header>
+
     <div class="container">
         Welcome ... <mark>
-            <? echo $_SESSION['name']; ?>
+            <?php echo $_SESSION['name']; ?>
         </mark>
         <table class="table">
             <thead class="thead-light table-striped">
@@ -60,8 +67,7 @@
                     <td><?= $f ?></td>
                     <td><?= $g ?></td>
                     <td><?= $h ?></td>
-                    <td><img src="image/<?=$i ?>" width="100" height="100"></td>
-
+                    <td><img src="image/<?= $i ?>" width="100" height="100"></td>
 
                     <td><a href="add_cart1.php?id=<? echo $a ?>"
                             onClick="if(confirm('Are you sure ??')) return true;else return false;"><img

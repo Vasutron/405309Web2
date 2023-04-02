@@ -10,18 +10,28 @@
     <link href="css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Register1!</title>
 </head>
 
 <body>
 
     <div class="container">
-        <h1>ข้อมูลใน container ภายใต้ div</h1>
-        <div class="mt-3 text">
-            <p>Register1<a href="regis1.php">Click here</a>.</p>
-            
-            <!-- <p>For repairmen. <a href="">Login Repairmen</a>.</p> -->
+        <p>Index <a href="index.php">Click here</a></p>
+
+        <div class="mt-3 mb-3 row">
+            <!--// แถว 1 -->
+            <label class="col-sm-3 col-form-label">Customer_ID :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Customer_ID" value="example">
+            </div>
         </div>
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Name :</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Customer_Name">
+            </div>
+        </div>
+
     </div>
 
     <!-- Optional JavaScript! -->

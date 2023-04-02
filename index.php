@@ -14,14 +14,16 @@
 </head>
 
 <body>
-
+    <header>
+        <p>Index <a href="index.php">Click here</a></p> 
+        <p>Register1<a href="regis1.php">Click here</a></p>
+        <!-- <p>For repairmen. <a href="">Login Repairmen</a>.</p> -->
+        ข้อมูลในแท็ก header
+    </header>
+    
     <div class="container">
         <h1>ข้อมูลใน container ภายใต้ div</h1>
-        <div class="mt-3 text">
-            <p>Register1<a href="regis1.php">Click here</a>.</p>
-            
-            <!-- <p>For repairmen. <a href="">Login Repairmen</a>.</p> -->
-        </div>
+        
     </div>
 
     <!-- Optional JavaScript! -->

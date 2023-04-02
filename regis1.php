@@ -14,9 +14,11 @@
 </head>
 
 <body>
-
+    <header>
+    <p>Index <a href="index.php">Click here</a></p>
+    </header>
     <div class="container">
-        <p>Index <a href="index.php">Click here</a></p>
+        
 
         <form name="form1" method="post" action="regis2.php" enctype="multipart/form-data">
 
@@ -24,7 +26,7 @@
                 <!--// แถว 1 -->
                 <label class="col-sm-3 col-form-label">Customer_ID :</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="cus_id" name="cus_id" value="example">
+                    <input type="text" readonly class="form-control-plaintext" id="cus_id" name="cus_id" value="AUTO_example : 0">
                 </div>
             </div>
             <div class="mb-3 row">
@@ -65,7 +67,7 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">User :</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="cus_uesr" name="cus_user">
+                    <input type="text" class="form-control" id="cus_user" name="cus_user">
                 </div>
             </div>
             <div class="mb-3 row">
@@ -81,7 +83,8 @@
                         onchange="previewImage(event)">
                 </div>
             </div>
-            <div class="mb-3 row">  <!--// ฟอร์มแสดงรูปภาพก่อนอัพโหลด -->
+            <div class="mb-3 row">
+                <!--// ฟอร์มแสดงรูปภาพก่อนอัพโหลด -->
                 <label class="col-sm-3 col-form-label">Preview :</label>
                 <div class="col-sm-10">
                     <img id="imagePreview" style="max-width: 300px; max-height: 300px;">
@@ -100,7 +103,7 @@
                 reader.readAsDataURL(input.files[0]);
             }
             </script>
-            
+
 
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary mb-3">Confirm</button>

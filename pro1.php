@@ -15,12 +15,38 @@
 
 <body>
     <header>
-    <p>Index <a href="index.php">Click here</a></p>
-    <p>Register1<a href="regis1.php">Click here</a></p>
-    <p>Product<a href="pro1.php">Click here</a></p>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.php">405309 WEB2</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="regis1.php">Register1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pro1.php">Prodect</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="show_pro_bs.php">Show Prodect</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="show_sess_bs.php">Show Cutomer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
     <div class="container">
-        
+
 
         <form name="form1" method="post" action="pro2.php" enctype="multipart/form-data">
 
@@ -28,7 +54,8 @@
                 <!--// แถว 1 -->
                 <label class="col-sm-3 col-form-label">Product_ID :</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="pro_id" name="pro_id" value="AUTO_example : 0">
+                    <input type="text" readonly class="form-control-plaintext" id="pro_id" name="pro_id"
+                        value="AUTO_example : 0">
                 </div>
             </div>
             <div class="mb-3 row">
@@ -41,14 +68,14 @@
                 <label class="col-sm-3 col-form-label">Type :</label>
                 <div class="col-sm-10">
                     <select class="form-select" id="pro_type" name="pro_type">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="notebook">Notebook</option>
+                        <option value="smartphone">Smartphone</option>
+                        <option value="smartwatch">Smartwatch</option>
                     </select>
                 </div>
             </div>
-            
+
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Price :</label>
                 <div class="col-sm-10">

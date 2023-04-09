@@ -19,16 +19,40 @@
 
 <body>
     <header>
-        <p>Index <a href="index.php">Click here</a></p>
-        <p>Register1<a href="regis1.php">Click here</a></p>
-        <p>Prodect<a href="pro1.php">Click here</a></p>
-        <!-- <p>For repairmen. <a href="">Login Repairmen</a>.</p> -->
-        ข้อมูลในแท็ก header
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.php">405309 WEB2</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="regis1.php">Register1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pro1.php">Prodect</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="show_pro_bs.php">Show Prodect</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="show_sess_bs.php">Show Cutomer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <div class="container">
         Welcome ... <mark>
-            <?php echo $_SESSION['name']; ?>
+            <!-- <?php echo $_SESSION['name']; ?> -->
         </mark>
         <table class="table">
             <thead class="thead-light table-striped">
@@ -56,8 +80,12 @@
             ?>
             <tbody>
                 <tr>
-                    <td><a href="edit_pro1.php?id= <?=$a ;?>"><img src="https://cdn0.iconfinder.com/data/icons/set-app-incredibles/24/Edit-01-64.png" width="30" height="30"></td>
-                    <td><a href="del_pro1.php?id= <?=$a ;?>"><img src="https://cdn4.iconfinder.com/data/icons/linecon/512/delete-64.png" width="30" height="30"></td>
+                    <td><a href="edit_pro1.php?id= <?=$a ;?>"><img
+                                src="https://cdn0.iconfinder.com/data/icons/set-app-incredibles/24/Edit-01-64.png"
+                                width="30" height="30"></td>
+                    <td><a href="del_pro1.php?id= <?=$a ;?>"><img
+                                src="https://cdn4.iconfinder.com/data/icons/linecon/512/delete-64.png" width="30"
+                                height="30"></td>
                     <td><?= $a ?></td>
                     <td><?= $b ?></td>
                     <td><?= $c ?></td>

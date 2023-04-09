@@ -83,29 +83,35 @@
                     <td><a href="edit_pro1.php?id= <?=$a ;?>"><img
                                 src="https://cdn0.iconfinder.com/data/icons/set-app-incredibles/24/Edit-01-64.png"
                                 width="30" height="30"></td>
-                    <td><a href="del_pro1.php?id= <?=$a ;?>"><img
+                    <td><a href="#" onclick="confirmDelete('<?=$a;?>')"><img
                                 src="https://cdn4.iconfinder.com/data/icons/linecon/512/delete-64.png" width="30"
-                                height="30"></td>
+                                height="30"></a></td>
                     <td><?= $a ?></td>
                     <td><?= $b ?></td>
                     <td><?= $c ?></td>
                     <td><?= $d ?></td>
                     <td><?= $e ?></td>
                     <td><img src="image/<?= $i ?>" width="100" height="100"></td>
-
-                    <!-- <td><a href="add_cart1.php?id=<? echo $a ?>"
-                            onClick="if(confirm('Are you sure ??')) return true;else return false;"><img
-                                src="img/cart2.jpg" width="36" height="38"></td> -->
                     <?php 
-                        } 
+                    }
                     ?>
+                </tr>
             </tbody>
         </table>
+    </div>
+    <script>
+    function confirmDelete(id) {
+        if (confirm("Are you sure to delete this item?")) {
+            window.location.href = "del_pro1.php?id=" + id;
+        } else {
+            return false;
+        }
+    }
+    </script>
 
-
-        <script src="js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+    <script src="js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

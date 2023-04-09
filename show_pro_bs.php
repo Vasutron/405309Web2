@@ -32,6 +32,8 @@
         </mark>
         <table class="table">
             <thead class="thead-light table-striped">
+                <th>EDIT</th>
+                <th>DEL</th>
                 <th>ID</th>
                 <th>Name</th>
                 <th>type</th>
@@ -54,6 +56,8 @@
             ?>
             <tbody>
                 <tr>
+                    <td><a href="edit_pro1.php?id= <?=$a ;?>"><img src="https://cdn0.iconfinder.com/data/icons/set-app-incredibles/24/Edit-01-64.png" width="30" height="30"></td>
+                    <td><a href="del_pro1.php?id= <?=$a ;?>"><img src="https://cdn4.iconfinder.com/data/icons/linecon/512/delete-64.png" width="30" height="30"></td>
                     <td><?= $a ?></td>
                     <td><?= $b ?></td>
                     <td><?= $c ?></td>

@@ -18,6 +18,8 @@
         <p>Index <a href="index.php">Click here</a></p>
         <p>Register1<a href="regis1.php">Click here</a></p>
         <p>Prodect<a href="pro1.php">Click here</a></p>
+        <p>Show Prodect<a href="show_pro_bs.php">Click here</a></p>
+        <p>Show Cutomer<a href="show_sess_bs.php">Click here</a></p>
         <!-- <p>For repairmen. <a href="">Login Repairmen</a>.</p> -->
         ข้อมูลในแท็ก header
     </header>

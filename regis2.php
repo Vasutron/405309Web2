@@ -14,7 +14,6 @@
 </head>
 
 <body>
-    
     <?php
         $a = $_POST['cus_id'];
         $b = $_POST['cus_title'];    

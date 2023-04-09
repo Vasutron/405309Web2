@@ -56,6 +56,8 @@
         </mark>
         <table class="table">
             <thead class="thead-light table-striped">
+                <th>EDIT</th>
+                <th>DEL</th>
                 <th>ID</th>
                 <th>Title</th>
                 <th>Name</th>
@@ -84,6 +86,12 @@
             ?>
             <tbody>
                 <tr>
+                    <td><a href="edit_cus1.php?id= <?=$a ;?>"><img
+                                src="https://cdn0.iconfinder.com/data/icons/set-app-incredibles/24/Edit-01-64.png"
+                                width="30" height="30"></td>
+                    <td><a href="#" onclick="confirmDelete('<?=$a;?>')"><img
+                                src="https://cdn4.iconfinder.com/data/icons/linecon/512/delete-64.png" width="30"
+                                height="30"></a></td>
                     <td><?= $a ?></td>
                     <td><?= $b ?></td>
                     <td><?= $c ?></td>
@@ -91,7 +99,9 @@
                     <td><?= $e ?></td>
                     <td><?= $f ?></td>
                     <td><?= $g ?></td>
-                    <td><?= $h ?></td>
+                    <td>
+                        <input type="password" readonly class="form-control-plaintext" value="<?= $h ?>">
+                    </td>
                     <td><img src="image/<?= $i ?>" width="100" height="100"></td>
 
                     <!-- <td><a href="add_cart1.php?id=<? echo $a ?>"
@@ -102,11 +112,22 @@
                     ?>
             </tbody>
         </table>
+    </div>
+
+    <script>
+    function confirmDelete(id) {
+        if (confirm("Are you sure to delete this item?")) {
+            window.location.href = "del_cus1.php?id=" + id;
+        } else {
+            return false;
+        }
+    }
+    </script>
 
 
-        <script src="js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+    <script src="js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

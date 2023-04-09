@@ -47,8 +47,52 @@
     </header>
 
     <div class="container">
-        <h1>ข้อมูลใน container ภายใต้ div</h1>
-
+        <h1>Product</h1>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <?php
+                require "dataconnect.php";
+                $sql = "SELECT * FROM product";
+                $query = mysqli_query($conn, $sql);
+                $count = mysqli_num_rows($query);
+                for ($i = 0; $i < $count; $i++) {
+                    if ($i == 0) {
+                    echo '<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
+                    } else {
+                    echo '<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="'.$i.'" aria-label="Slide '.($i+1).'"></button>';
+                    }
+                }
+                ?>
+            </div>
+            <div class="carousel-inner">
+                <?php
+            $query = mysqli_query($conn, $sql);
+            $active = "active";
+            while ($rs = mysqli_fetch_array($query)) {
+                echo '
+                <div class="carousel-item '.$active.'">
+                <img src="image/'.$rs['pro_pic'].'" class="d-block w-25" alt="'.$rs['pro_name'].'" >
+                <div class="carousel-caption d-none d-md-block" style="color: white; text-shadow: 1px 1px black;">
+                    <h5>'.$rs['pro_name'].'</h5>
+                    <p>'.$rs['pro_price'].' บาท</p>
+                </div>
+                </div>
+                ';
+                $active = "";
+            }
+            ?>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
 
     <!-- Optional JavaScript! -->

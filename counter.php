@@ -7,5 +7,5 @@ if(isset($counter)){
 }
 echo "<br><br>";
 echo "คุณเข้าชมเว็บไซต์นี้แล้ว " . $_COOKIE['counter'] . " ครั้ง <br>";
-echo "คุณเข้าชมเว็บไซต์นี้ครั้งล่าสุดเมื่อ " . date("d/m/Y H:i:s", $_COOKIE['counter']);
+// echo "คุณเข้าชมเว็บไซต์นี้ครั้งล่าสุดเมื่อ " . date("d/m/Y H:i:s", $_COOKIE['counter']);
 ?>

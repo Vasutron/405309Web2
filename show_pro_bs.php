@@ -69,6 +69,7 @@
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
                 <a class="btn btn-outline-primary" href="pro1.php">Add Prodect</a>
+                <a class="btn btn-outline-primary" href="join2.php">ShoW Join Prodect</a>
             </li>
         </ul>
         <table class="table">
@@ -106,7 +107,7 @@
                     <td><?= $a ?></td>
                     <td><?= $b ?></td>
                     <td><?= $c ?></td>
-                    <td><?= $d ?></td>
+                    <td><?= number_format($d, 2, '.', ',') ?> บาท</td>
                     <td><?= $e ?></td>
                     <td><img src="image/<?= $i ?>" width="100" height="100"></td>
                     <?php 

@@ -103,7 +103,7 @@
                         <td><?= $a ?></td>
                         <td><?= $b ?></td>
                         <td><?= $c ?></td>
-                        <td><?= $d ?></td>
+                        <td><?= number_format($d, 2, '.', ',') ?> บาท</td> <!-- กำหนดให้แสดงทศนิยม 2 ตำแหน่ง -->
                         <td><?= $e ?></td>
                         <td><img src="image/<?= $f ?>" width="50" height="50"></td>
                         <td><?= $g ?></td>

@@ -10,4 +10,8 @@ if(isset($_SESSION['cus_fname'])){
 if(!isset($_SESSION['cus_id'])){
     echo""; // กำหนดค่าเริ่มต้น
 }
+
+if(!isset($_SESSION['cus_pic'])){
+    echo""; // กำหนดค่าเริ่มต้น
+}
 ?>

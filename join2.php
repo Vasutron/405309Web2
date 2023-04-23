@@ -13,7 +13,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Show_Product</title>
+    <title>Customer to Product</title>
 </head>
 
 <body>
@@ -65,25 +65,24 @@
     </header>
 
     <div class="container">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="btn btn-outline-primary" href="pro1.php">Add Prodect</a>
-            </li>
-        </ul>
+        Welcome ... <mark>
+            <?php echo $_SESSION['cus_fname']; ?>
+        </mark>
         <table class="table">
             <thead class="thead-light table-striped">
-                <th>EDIT</th>
-                <th>DEL</th>
+                <!-- <th>EDIT</th>
+                <th>DEL</th> -->
                 <th>ID</th>
                 <th>Name</th>
-                <th>type</th>
-                <th>price</th>
+                <th>Type</th>
+                <th>Price</th>
                 <th>Amount</th>
-                <th>Picture</th>
+                <th>Pic</th>
+                <th>C_Name</th>
             </thead>
             <?php
                 require "dataconnect.php";
-                $sql = "select * from product";
+                $sql = "SELECT * FROM product LEFT JOIN customer ON product.cus_id = customer.cus_id";
                 $query = mysqli_query($conn, $sql);
                 while ($rs = mysqli_fetch_assoc($query))
                 {
@@ -92,38 +91,41 @@
                     $c = $rs['pro_type'];
                     $d = $rs['pro_price'];
                     $e = $rs['pro_amount'];
-                    $i = $rs['pro_pic'];
+                    $f = $rs['pro_pic'];
+                    $g = $rs['cus_fname'];
             ?>
-            <tbody>
-                <tr>
-                    <td><a href="edit_pro1.php?id= <?=$a ;?>"><img
-                                src="https://cdn0.iconfinder.com/data/icons/set-app-incredibles/24/Edit-01-64.png"
-                                width="30" height="30"></td>
-                    <td><a href="#" onclick="confirmDelete('<?=$a;?>')"><img
-                                src="https://cdn4.iconfinder.com/data/icons/linecon/512/delete-64.png" width="30"
-                                height="30"></a></td>
-                    <td><?= $a ?></td>
-                    <td><?= $b ?></td>
-                    <td><?= $c ?></td>
-                    <td><?= $d ?></td>
-                    <td><?= $e ?></td>
-                    <td><img src="image/<?= $i ?>" width="100" height="100"></td>
-                    <?php 
-                    }
-                    ?>
-                </tr>
-            </tbody>
+                <tbody>
+                    <tr>
+                        <!-- <td><a href=" .php?id= <?=$a ;?>"><img
+                                    src="https://cdn0.iconfinder.com/data/icons/set-app-incredibles/24/Edit-01-64.png"
+                                    width="30" height="30"></td>
+                        <td><a href="#" onclick="confirmDelete('<?=$a;?>')"><img
+                                    src="https://cdn4.iconfinder.com/data/icons/linecon/512/delete-64.png" width="30"
+                                    height="30"></a></td> -->
+                        <td><?= $a ?></td>
+                        <td><?= $b ?></td>
+                        <td><?= $c ?></td>
+                        <td><?= $d ?></td>
+                        <td><?= $e ?></td>
+                        <td><img src="image/<?= $f ?>" width="50" height="50"></td>
+                        <td><?= $g ?></td>
+                </tbody>
+            <?php 
+                } 
+            ?>
         </table>
     </div>
-    <script>
+
+    <!-- <script>
     function confirmDelete(id) {
         if (confirm("Are you sure to delete this item?")) {
-            window.location.href = "del_pro1.php?id=" + id;
+            window.location.href = "del_cus1.php?id=" + id;
         } else {
             return false;
         }
     }
-    </script>
+    </script> -->
+
 
     <script src="js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">

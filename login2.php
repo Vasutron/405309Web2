@@ -15,6 +15,7 @@ if(isset($_POST['cus_user']) && isset($_POST['cus_pass'])){
     if(mysqli_num_rows($result) ==1){
         $row = mysqli_fetch_assoc($result);
         $_SESSION['cus_fname'] = $row['cus_fname'];
+        $_SESSION['cus_pic'] = $row['cus_pic'];
         header("Location: show_pro_bs.php");
         exit;
     }else{

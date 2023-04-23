@@ -1,3 +1,6 @@
+<?php
+    include('header.php')
+?>
 <!doctype html>
 <html lang="en">
 
@@ -29,12 +32,6 @@
                             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="regis1.php">Register1</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pro1.php">Prodect</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="show_pro_bs.php">Show Prodect</a>
                         </li>
                         <li class="nav-item">
@@ -42,9 +39,25 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
-                        <li>
-                            <a type="nav-link" class="btn btn-primary ms-auto" href="login1.php">Login </a>
+                        <?php if(isset($_SESSION['cus_fname'])) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Welcome, <?php echo $_SESSION['cus_fname']; ?>
+                        </a>
+                        <li class="nav-item">
+                            <a class="nav-link" ><?php include('counter.php'); ?>
+                        </a>
                         </li>
+                        <li>
+                            <a type="nav-link" class="btn btn-danger ms-auto" href="logout.php">Logout</a>
+                        </li>
+                        <?php } else { ?>
+                        <li>
+                            <a type="nav-link" class="btn btn-primary ms-auto" href="login1.php">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="regis1.php">Register</a>
+                        </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>

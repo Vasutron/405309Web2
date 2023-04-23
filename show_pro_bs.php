@@ -1,6 +1,5 @@
 <?php
-    ob_start(); 
-    session_start();
+    include('header.php')
 ?>
 <!doctype html>
 <html lang="en">
@@ -33,9 +32,6 @@
                             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="regis1.php">Register1</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="pro1.php">Prodect</a>
                         </li>
                         <li class="nav-item">
@@ -45,6 +41,14 @@
                             <a class="nav-link" href="show_sess_bs.php">Show Cutomer</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li>
+                            <a type="nav-link" class="btn btn-danger ms-auto" href="logout.php">LOGOUT </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="regis1.php">Register</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -52,8 +56,13 @@
 
     <div class="container">
         Welcome ... <mark>
-            <!-- <?php echo $_SESSION['name']; ?> -->
+            <?php echo $_SESSION['cus_fname']; ?>
         </mark>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="btn btn-outline-primary" href="pro1.php">Add Prodect</a>
+            </li>
+        </ul>
         <table class="table">
             <thead class="thead-light table-striped">
                 <th>EDIT</th>

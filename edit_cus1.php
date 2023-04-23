@@ -41,6 +41,11 @@
                             <a class="nav-link" href="show_sess_bs.php">Show Cutomer</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li>
+                            <a type="nav-link" class="btn btn-primary ms-auto" href="login1.php">Login </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>

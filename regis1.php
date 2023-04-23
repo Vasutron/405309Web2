@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<header>
+    <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">405309 WEB2</a>
@@ -26,13 +26,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="regis1.php">Register1</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pro1.php">Prodect</a>
+                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="show_pro_bs.php">Show Prodect</a>
@@ -41,13 +35,20 @@
                             <a class="nav-link" href="show_sess_bs.php">Show Cutomer</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li>
+                            <a type="nav-link" class="btn btn-primary ms-auto" href="login1.php">Login </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="regis1.php">Register</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        
 
+    <div class="container">
         <form name="form1" method="post" action="regis2.php" enctype="multipart/form-data">
 
             <div class="mt-3 mb-3 row">

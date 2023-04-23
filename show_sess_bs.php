@@ -1,6 +1,5 @@
 <?php
-    ob_start(); 
-    session_start();
+    include('header.php')
 ?>
 <!doctype html>
 <html lang="en">
@@ -30,10 +29,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="regis1.php">Register1</a>
+                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="pro1.php">Prodect</a>
@@ -45,6 +41,14 @@
                             <a class="nav-link" href="show_sess_bs.php">Show Cutomer</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li>
+                            <a type="nav-link" class="btn btn-danger ms-auto" href="logout.php">LOGOUT </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="regis1.php">Register</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -52,7 +56,7 @@
 
     <div class="container">
         Welcome ... <mark>
-            <!-- <?php echo $_SESSION['name']; ?> -->
+            <?php echo $_SESSION['cus_fname']; ?>
         </mark>
         <table class="table">
             <thead class="thead-light table-striped">

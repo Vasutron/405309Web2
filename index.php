@@ -41,7 +41,7 @@ session_start();
                     <ul class="navbar-nav ms-auto">
                         <?php if(isset($_SESSION['cus_fname'])) { ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Welcome, <?php echo $_SESSION['cus_fname']; ?>
+                            <a class="nav-link" href="#">Welcome : <strong><?php echo $_SESSION['cus_fname']; ?></strong>
                         </a>
                         <li class="nav-item">
                             <a class="nav-link" ><?php include('counter.php'); ?>

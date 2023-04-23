@@ -13,7 +13,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>EDIT_Product FORM!</title>
+    <title>Insert Data!</title>
 </head>
 
 <body>
@@ -64,108 +64,94 @@
         </nav>
     </header>
 
-    <?php
-    // สร้างฟอร์มแก้ไขข้อมูล
-    // 1. เชื่อมต่อ database:
-    // $z = $_GET["id"];
-    require "dataconnect.php";
-    // 2. query ข้อมูลจากตาราง:
-    $query = "SELECT * FROM product WHERE pro_id ='" . $_GET["id"] . "' ";
-    $result = mysqli_query($conn, $query);
-    $row = mysqli_fetch_array($result);
-
-    ?>
     <div class="container">
-
-
-        <form name="form1" method="post" action="edit_pro2.php" enctype="multipart/form-data">
+        <form name="form1" method="post" action="regis2.php" enctype="multipart/form-data">
 
             <div class="mt-3 mb-3 row">
                 <!--// แถว 1 -->
-                <label class="col-sm-3 col-form-label">Product_ID :</label>
+                <label class="col-sm-3 col-form-label">Customer_ID :</label>
                 <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="pro_id" name="pro_id"
-                        value="<?=$row['pro_id'] ?>">
+                    <input type="text" readonly class="form-control-plaintext" id="cus_id" name="cus_id" value="AUTO_example : 0">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Product_Name :</label>
+                <label class="col-sm-3 col-form-label">Title :</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="pro_name" name="pro_name"
-                        value="<?=$row['pro_name'] ?>">
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Type :</label>
-                <div class="col-sm-10">
-                    <select class="form-select" id="pro_type" name="pro_type">
-                        <option value="accessories" <?=($row['pro_type'] == 'accessories') ? 'selected' : ''?>>
-                            Accessories</option>
-                        <option value="notebook" <?=($row['pro_type'] == 'notebook') ? 'selected' : ''?>>Notebook
-                        </option>
-                        <option value="smartphone" <?=($row['pro_type'] == 'smartphone') ? 'selected' : ''?>>Smartphone
-                        </option>
-                        <option value="smartwatch" <?=($row['pro_type'] == 'smartwatch') ? 'selected' : ''?>>Smartwatch
-                        </option>
+                    <select class="form-select" id="cus_title" name="cus_title">
+                        <option value="Boy">Boy</option>
+                        <option value="Girl">Girl</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                     </select>
                 </div>
             </div>
-
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Price :</label>
+                <label class="col-sm-3 col-form-label">Name :</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="pro_price" name="pro_price"
-                        value="<?=$row['pro_price'] ?>">
+                    <input type="text" class="form-control" id="cus_fname" name="cus_fname">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Amount :</label>
+                <label class="col-sm-3 col-form-label">Last name :</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="pro_amount" name="pro_amount"
-                        value="<?=$row['pro_amount'] ?>">
+                    <input type="text" class="form-control" id="cus_lname" name="cus_lname">
                 </div>
             </div>
-
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Old Picture : </label>
+                <label class="col-sm-3 col-form-label">Address :</label>
                 <div class="col-sm-10">
-                    <img src="image/<?=$row['pro_pic']?>" style="max-width: 300px; max-height: 300px;">
+                    <input type="text" class="form-control" id="cus_addr" name="cus_addr">
                 </div>
+            </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">NEW Picture :</label>
+                <label class="col-sm-3 col-form-label">Tel :</label>
                 <div class="col-sm-10">
-                    <?php
-            if ($row['pro_pic']) {
-                echo '<img src="image/'.$row['pro_pic'].'" style="max-width: 300px; max-height: 300px;" id="imagePreview">';
-            } else {
-                echo '<img id="imagePreview" style="max-width: 300px; max-height: 300px;">';
-            }
-        ?>
-                    <input type="file" class="form-control form-control-sm" id="pro_pic" name="pro_pic"
+                    <input type="text" class="form-control" id="cus_tel" name="cus_tel">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">User :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="cus_user" name="cus_user">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Password :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="cus_pass" name="cus_pass">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Picture :</label>
+                <div class="col-sm-10">
+                    <input type="file" class="form-control form-control-sm" id="cus_pic" name="cus_pic"
                         onchange="previewImage(event)">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <!--// ฟอร์มแสดงรูปภาพก่อนอัพโหลด -->
+                <label class="col-sm-3 col-form-label">Preview :</label>
+                <div class="col-sm-10">
+                    <img id="imagePreview" style="max-width: 300px; max-height: 300px;">
                 </div>
             </div>
 
             <!--//สคริปต์ แสดงรูปภาพก่อนอัพโหลด -->
-
-            <head>
-                <script>
-                function previewImage(event) {
-                    var input = event.target;
-                    var reader = new FileReader();
-                    reader.onload = function() {
-                        var imagePreview = document.getElementById('imagePreview');
-                        imagePreview.src = reader.result;
-                    }
-                    reader.readAsDataURL(input.files[0]);
+            <script>
+            function previewImage(event) {
+                var input = event.target;
+                var reader = new FileReader();
+                reader.onload = function() {
+                    var imagePreview = document.getElementById('imagePreview');
+                    imagePreview.src = reader.result;
                 }
-                </script>
-            </head>
+                reader.readAsDataURL(input.files[0]);
+            }
+            </script>
 
 
             <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-3">ยืนยันแก้ไข</button>
-                <a class="btn btn-danger mb-3" href="show_pro_bs.php" role="button">กลับ</a>
+                <button type="submit" class="btn btn-primary mb-3">Confirm</button>
             </div>
         </form>
     </div>

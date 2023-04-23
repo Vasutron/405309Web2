@@ -23,8 +23,9 @@
         $e = $_POST['pro_amount'];
         $i = $_FILES["pro_pic"]["name"];
         move_uploaded_file($_FILES["pro_pic"]["tmp_name"], "image/" . $i);
+        $f = $_POST['cus_id'];
         require "dataconnect.php";
-        $sql = "INSERT INTO product (pro_id, pro_name, pro_type, pro_price, pro_amount, pro_pic) VALUES ('$a', '$b', '$c', '$d', '$e', '$i')";
+        $sql = "INSERT INTO product (pro_id, pro_name, pro_type, pro_price, pro_amount, pro_pic, cus_id) VALUES ('$a', '$b', '$c', '$d', '$e', '$i', '$f')";
         $query = mysqli_query($conn, $sql);
         
         if ($query) {

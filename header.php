@@ -6,4 +6,8 @@ if(isset($_SESSION['cus_fname'])){
     header("Location: index.php");
     exit();
 }
+
+if(!isset($_SESSION['cus_id'])){
+    echo""; // กำหนดค่าเริ่มต้น
+}
 ?>

@@ -1,6 +1,5 @@
 <?php
-    ob_start(); 
-    session_start();
+    include('header.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,7 +13,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Product!</title>
+    <title>Add Product!</title>
 </head>
 
 <body>
@@ -42,7 +41,7 @@
                     <ul class="navbar-nav ms-auto">
                         <?php if(isset($_SESSION['cus_fname'])) { ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Welcome, <?php echo $_SESSION['cus_fname']; ?>
+                            <a class="nav-link" href="#">Welcome : <strong><?php echo $_SESSION['cus_fname']; ?></strong>
                         </a>
                         <li class="nav-item">
                             <a class="nav-link" ><?php include('counter.php'); ?>
@@ -65,10 +64,7 @@
         </nav>
     </header>
 
-    <div class="container">        
-        Welcome ... <mark>
-                <?php echo $_SESSION['cus_fname']; ?>
-            </mark>
+    <div class="container">
         <form name="form1" method="post" action="pro2.php" enctype="multipart/form-data">
 
             <div class="mt-3 mb-3 row">
@@ -137,17 +133,40 @@
             }
             </script>
 
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">cus_id :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="cus_id" name="cus_id" disabled value="<?php echo $_SESSION['cus_id']; ?>">
+                    <input type="hidden" name="cus_id" value="<?php echo $_SESSION['cus_id']; ?>">
+                </div>
+            </div>
 
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-3">Confirm</button>
+            <div class="mb-3 row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary mb-3" name="submit">Confirm</button>
+                    <a class="btn btn-danger mb-3" href="show_pro_bs.php" role="button">กลับ</a>
+                </div>
             </div>
         </form>
     </div>
 
-    <!-- Optional JavaScript! -->
     <script src="js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 </body>
 
 </html>
+<!-- 
+    <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Confirm</button>
+                <a class="btn btn-danger mb-3" href="show_pro_bs.php" role="button">กลับ</a>
+            </div> 
+
+        <div class="mb-3 row">
+                <div class="col-sm-10">
+                    <input type="hidden" name="cus_id" value="<?php echo $_SESSION['cus_id']; ?>">
+                    <button type="submit" class="btn btn-primary mb-3">Confirm</button>
+                    <a class="btn btn-danger mb-3" href="show_pro_bs.php?cus_id=<?php echo $_SESSION['cus_id']; ?>" role="button">กลับ</a>
+                </div>
+            </div>
+-->

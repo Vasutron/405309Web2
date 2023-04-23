@@ -32,6 +32,9 @@ session_start();
                             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="show_pro_bs.php">Show Prodect Sell</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="show_pro_bs.php">Show Prodect</a>
                         </li>
                         <li class="nav-item">

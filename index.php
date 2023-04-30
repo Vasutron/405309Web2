@@ -32,7 +32,7 @@ session_start();
                             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="show_pro_bs.php">Show Prodect Sell</a>
+                            <a class="nav-link" href="show_pro_sell.php">Show Prodect Sell</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="show_pro_bs.php">Show Prodect</a>
@@ -42,26 +42,27 @@ session_start();
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
-                    <?php if(isset($_SESSION['cus_fname'])) { ?>
+                        <?php if(isset($_SESSION['cus_fname'])) { ?>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Welcome : <?php if(isset($_SESSION['cus_pic'])) { ?>
-                            <img src="image/<?php echo $_SESSION['cus_pic']; ?>" width="30" height="30" class="rounded-circle me-2">
-                        <?php } ?> <strong><?php echo $_SESSION['cus_fname']; ?></strong></a>
+                            <a class="nav-link" href="#">Welcome : <?php if(isset($_SESSION['cus_pic'])) { ?>
+                                <img src="image/<?php echo $_SESSION['cus_pic']; ?>" width="30" height="30"
+                                    class="rounded-circle me-2">
+                                <?php } ?> <strong><?php echo $_SESSION['cus_fname']; ?></strong></a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" ><?php include('counter.php'); ?></a>
+                            <a class="nav-link"><?php include('counter.php'); ?></a>
                         </li>
                         <li>
-                        <a type="nav-link" class="btn btn-danger ms-auto" href="logout.php">Logout</a>
+                            <a type="nav-link" class="btn btn-danger ms-auto" href="logout.php">Logout</a>
                         </li>
-                    <?php } else { ?>
+                        <?php } else { ?>
                         <li>
-                        <a type="nav-link" class="btn btn-primary ms-auto" href="login1.php">Login</a>
+                            <a type="nav-link" class="btn btn-primary ms-auto" href="login1.php">Login</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="regis1.php">Register</a>
+                            <a class="nav-link" href="regis1.php">Register</a>
                         </li>
-                    <?php } ?>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
@@ -126,24 +127,10 @@ session_start();
                 </div>
             </div>
         </div>
-
-        <ul class="navbar-nav ms-auto">
-            <?php if(isset($_SESSION['cus_fname'])) { ?>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Welcome, <?php echo $_SESSION['cus_fname']; ?></a>
-            </li>
-            <li>
-                <a type="nav-link" class="btn btn-danger ms-auto" href="logout.php">Logout</a>
-            </li>
-            <?php } else { ?>
-            <li>
-                <a type="nav-link" class="btn btn-primary ms-auto" href="login1.php">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="regis1.php">Register</a>
-            </li>
-            <?php } ?>
-        </ul>
+        
+        <div>
+        
+        </div>
     </div>
 
     <!-- Optional JavaScript! -->

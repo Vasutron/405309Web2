@@ -69,12 +69,15 @@
     </header>
 
     <div class="container">
+        <br>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
                 <a class="btn btn-outline-primary" href="pro1.php">Add Prodect</a>
                 <a class="btn btn-outline-primary" href="join2.php">ShoW Join Prodect</a>
             </li>
         </ul>
+        <br>
+
         <table class="table">
             <thead class="thead-light table-striped">
                 <th>EDIT</th>

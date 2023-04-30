@@ -73,7 +73,7 @@
         <br>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="btn btn-outline-primary" href="show_pro_sell.php">รายการสินค้า</a>
+                <a class="btn btn-outline-primary" href="show_pro_sell.php">เลือกซื้อสินค้า</a>
             </li>
         </ul>
         <br>
@@ -81,7 +81,7 @@
         <table class="table">
             <thead class="thead-light table-striped">
                 <tr>
-                    <th colspan="5" class="text-center">Summary Order</th>
+                    <th colspan="6" class="text-center">Summary Order</th>
                 </tr>
                 <tr>
                     <td colspan="3" class="text-center">Dear : <strong><?= $_SESSION['cus_fname'] ?></strong></td>
@@ -93,25 +93,29 @@
                     <th>Price</th>
                     <th>Amount</th>
                     <th>Total</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                     require "dataconnect.php";
                     $sql = "SELECT * FROM cart WHERE cart_cus_fname = '".$_SESSION['cus_fname']."'";
+                    $sql2 = "SELECT cart_pro_name, SUM(cart_amount) AS cart_amount Form cart WHERE cart_cus_fname = '".$_SESSION['cus_fname']."' GROUP BY cart_pro_name "; 
+                    // คำสั่ง SQL ในการแสดงผลรายการสินค้าที่เลือก โดยจะแสดงรายการสินค้าที่มีชื่อสินค้าตรงกับชื่อสินค้าที่เลือก และมีชื่อลูกค้าตรงกับชื่อลูกค้าที่เข้าสู่ระบบ โดยจะแสดงผลเป็นรายการสินค้าที่มีชื่อสินค้าซ้ำกัน และนำจำนวนสินค้ามาบวกกัน
+
                     $query = mysqli_query($conn, $sql);
                     $total_price = 0; // ราคารวมเริ่มต้นเป็น 0
                     $count = 1; // กำหนดตัวแปรนับจำนวนแถว ใช้ในการแสดงค่าตัวเลขลำดับ No.
+                    $total_amount = 0;
                     while ($rs = mysqli_fetch_assoc($query))
                     {
+                        $id_cart = $rs['cart_id'];
                         $a = $count;
                         $b = $rs['cart_pro_name'];
                         $c = $rs['cart_pro_price'];
                         $e = $rs['cart_amount'];
                         $d = $rs['cart_total'];
                         $total_price += $d; // นำราคาสินค้ามาบวกเพิ่มกับราคารวมเดิม
-
-                        $count++;
                     ?>
                 <tr>
                     <td><?= $a ?></td>
@@ -119,12 +123,16 @@
                     <td><?= number_format($c, 2, '.', ',') ?> </td>
                     <td><?= $e ?></td>
                     <td><?= number_format($d, 2, '.', ',') ?> บาท</td>
+                    <td><a href="del_cart.php?cart_id=<?= $id_cart ?>" class="btn btn-danger">Delete</a></td>
                 </tr>
                     <?php 
+                    $count++;
+                    $total_amount += $e;
                         }
                     ?>
                 <tr>
-                    <td colspan="4" class="text-right"><strong>Total Price:</strong></td>
+                    <td colspan="3" class="text-right"><strong>Total :</strong></td>
+                    <td colspan="2" class="text-right"> Amount : <strong><?= $total_amount ?></strong></td>
                     <td><strong><?= number_format($total_price, 2, '.', ',') ?> บาท </strong></td>
                 </tr>
             </tbody>

@@ -73,17 +73,16 @@
         <br>
         <br>
 
-        <a class="nav-link" href="#">ชื่อ : <strong><?php echo $_SESSION['cus_fname']; ?></strong></a>
+        
         <?php
             require "dataconnect.php";
             $sql = "SELECT * FROM customer WHERE cus_fname = '".$_SESSION['cus_fname']."'";
             $query = mysqli_query($conn, $sql);
             $rs = mysqli_fetch_array($query);
 
-            echo "<a class='nav-link' href='#'>นามสกุล : <strong>".$rs['cus_lname']."</strong></a>";
-            echo "<a class='nav-link' href='#'>รหัสลูกค้า : <strong>".$rs['cus_id']."</strong></a>";
-            echo "<a class='nav-link' href='#'>เบอร์โทร : <strong>".$rs['cus_tel']."</strong></a>";
-            echo "<a class='nav-link' href='#'>ที่อยู่ : <strong>".$rs['cus_addr']."</strong></a>";
+            echo "รหัสลูกค้า : <strong>".$rs['cus_id']."</strong> ชื่อ : <strong>".$rs['cus_fname']."</strong> นามสกุล : <strong>".$rs['cus_lname']."</strong><br>";
+            echo "ที่อยู่ : <strong>".$rs['cus_addr']."</strong><br>";
+            echo "เบอร์โทร : <strong>".$rs['cus_tel']."</strong><br>";
         ?>
 
         <table class="table">

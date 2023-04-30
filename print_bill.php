@@ -71,29 +71,35 @@
 
     <div class="container">
         <br>
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="btn btn-outline-primary" href="show_pro_sell.php">เลือกซื้อสินค้า</a>
-            </li>
-        </ul>
         <br>
+
+        <a class="nav-link" href="#">ชื่อ : <strong><?php echo $_SESSION['cus_fname']; ?></strong></a>
+        <?php
+            require "dataconnect.php";
+            $sql = "SELECT * FROM customer WHERE cus_fname = '".$_SESSION['cus_fname']."'";
+            $query = mysqli_query($conn, $sql);
+            $rs = mysqli_fetch_array($query);
+
+            echo "<a class='nav-link' href='#'>นามสกุล : <strong>".$rs['cus_lname']."</strong></a>";
+            echo "<a class='nav-link' href='#'>รหัสลูกค้า : <strong>".$rs['cus_id']."</strong></a>";
+            echo "<a class='nav-link' href='#'>เบอร์โทร : <strong>".$rs['cus_tel']."</strong></a>";
+            echo "<a class='nav-link' href='#'>ที่อยู่ : <strong>".$rs['cus_addr']."</strong></a>";
+        ?>
 
         <table class="table">
             <thead class="thead-light table-striped">
                 <tr>
-                    <th colspan="6" class="text-center">Summary Order</th>
-                </tr>
-                <tr>
-                    <td colspan="3" class="text-center">Dear : <strong><?= $_SESSION['cus_fname'] ?></strong></td>
+                    <th colspan="3" class="text-center">Summary Order</th>
                     <td colspan="3" class="text-center">Date : <strong><?= date('Y-m-d') ?></strong></td>
                 </tr>
+                
                 <tr>
                     <th>No.</th>
                     <th>Product</th>
                     <th>Price</th>
                     <th>Amount</th>
                     <th>Total</th>
-                    <th>Delete</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -123,21 +129,26 @@
                     <td><?= number_format($c, 2, '.', ',') ?> </td>
                     <td><?= $e ?></td>
                     <td><?= number_format($d, 2, '.', ',') ?> บาท</td>
-                    <td><a href="del_cart.php?cart_id=<?= $id_cart ?>" class="btn btn-danger">Delete</a></td>
+
                 </tr>
-                    <?php 
+                <?php 
                     $count++;
                     $total_amount += $e;
                         }
                     ?>
                 <tr>
-                    <td colspan="3" class="text-right"><strong>Total :</strong></td>
+                    <td colspan="2" class="text-right"><strong>Total :</strong></td>
                     <td colspan="2" class="text-right"> Amount : <strong><?= $total_amount ?></strong></td>
                     <td><strong><?= number_format($total_price, 2, '.', ',') ?> บาท </strong></td>
                 </tr>
             </tbody>
         </table>
-        <a class="btn btn-secondary" href="print_bill.php">Print Request</a>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <button class="btn btn-primary btn-print" onclick="window.print()">Print</button>
+                <a class="btn btn-danger ms-auto" href="show_bill.php"> Cancel</a>
+            </li>
+        </ul>
     </div>
 
     <script src="js/bootstrap.bundle.min.js"

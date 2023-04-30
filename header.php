@@ -14,4 +14,8 @@ if(!isset($_SESSION['cus_id'])){
 if(!isset($_SESSION['cus_pic'])){
     echo""; // กำหนดค่าเริ่มต้น
 }
+
+if(!isset($_SESSION['cus_addr'])){
+    echo""; // กำหนดค่าเริ่มต้น
+}
 ?>

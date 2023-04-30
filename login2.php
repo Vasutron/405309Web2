@@ -15,6 +15,7 @@ if(isset($_POST['cus_user']) && isset($_POST['cus_pass'])){
     if(mysqli_num_rows($result) ==1){
         $row = mysqli_fetch_assoc($result);
         $_SESSION['cus_fname'] = $row['cus_fname'];
+        $_SESSION['cus_addr'] = $row['cus_addr'];
         $_SESSION['cus_pic'] = $row['cus_pic'];
         $_SESSION['cus_id'] = $row['cus_id']; // เพิ่มบรรทัดนี้เพื่อกำหนดค่า $_SESSION['cus_id'] จากตาราง customer
         header("Location: show_pro_bs.php");

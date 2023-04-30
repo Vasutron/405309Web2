@@ -34,7 +34,7 @@
         ?>
         <script>
             alert("เพิ่มสินค้าลงตะกร้าเรียบร้อยแล้ว");
-            window.location = "cart.php";
+            window.location = "show_bill.php";
         </script>
         <?php
     }

@@ -13,7 +13,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Show_Product Sell</title>
+    <title>Order summary</title>
 </head>
 
 <body>
@@ -70,63 +70,63 @@
     </header>
 
     <div class="container">
-    <ul class="navbar-nav ms-auto">
+        <br>
+        <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="btn btn-outline-primary" href="show_bill.php">สรุปรายการสั่งซื้อ</a>
+                <a class="btn btn-outline-primary" href="show_pro_sell.php">รายการสินค้า</a>
             </li>
         </ul>
+        <br>
+
         <table class="table">
             <thead class="thead-light table-striped">
                 <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Price</th>
-                <th>Amount</th>
-                <th>Picture</th>
-                <th>Quantity</th>
-                <th>Buy</th>
+                    <th colspan="5" class="text-center">Summary Order</th>
                 </tr>
-        </thead>
-        <tbody>
-            <?php
-            require "dataconnect.php";
-            $sql = "select * from product";
-            $query = mysqli_query($conn, $sql);
-            while ($rs = mysqli_fetch_assoc($query))
-            {
-                $a = $rs['pro_id'];
-                $b = $rs['pro_name'];    
-                $c = $rs['pro_type'];
-                $d = $rs['pro_price'];
-                $e = $rs['pro_amount'];
-                $i = $rs['pro_pic'];
-            ?>
-            <tr>
-                <td><?= $a ?></td>
-                <td><?= $b ?></td>
-                <td><?= $c ?></td>
-                <td><?= number_format($d, 2, '.', ',') ?> บาท</td>
-                <td><?= $e ?></td>
-                <td><img src="image/<?= $i ?>" width="100" height="100"></td>
-                <form method="post" action="buy_pro1.php?id=<?= $a ?>">
-                    <td>
-                        <div class="input-group">
-                            <span class="input-group-text">Quantity</span>
-                            <input type="number" name="quantity[<?= $a ?>]" class="form-control" min="1" max="<?= $e ?>" value="1">
-                        </div>
-                        <input type="hidden" name="buy_id" value="<?= $a ?>">
-                        <input type="hidden" name="buy_name" value="<?= $b ?>">
-                        <input type="hidden" name="buy_price" value="<?= $d ?>">
-                        <input type="hidden" name="buy_quantity" value="<?= $e ?>">
-                        <input type="hidden" name="buy_pic" value="<?= $i ?>">
-                    </td>
-                    <td><button type="submit" class="btn btn-primary">Buy</button></td>
-                </form>
-            </tr>
-                <?php 
-                }
-                ?>
+                <tr>
+                    <td colspan="3" class="text-center">Dear : <strong><?= $_SESSION['cus_fname'] ?></strong></td>
+                    <td colspan="3" class="text-center">Date : <strong><?= date('Y-m-d') ?></strong></td>
+                </tr>
+                <tr>
+                    <th>No.</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    require "dataconnect.php";
+                    $sql = "SELECT * FROM cart WHERE cart_cus_fname = '".$_SESSION['cus_fname']."'";
+                    $query = mysqli_query($conn, $sql);
+                    $total_price = 0; // ราคารวมเริ่มต้นเป็น 0
+                    $count = 1; // กำหนดตัวแปรนับจำนวนแถว ใช้ในการแสดงค่าตัวเลขลำดับ No.
+                    while ($rs = mysqli_fetch_assoc($query))
+                    {
+                        $a = $count;
+                        $b = $rs['cart_pro_name'];
+                        $c = $rs['cart_pro_price'];
+                        $e = $rs['cart_amount'];
+                        $d = $rs['cart_total'];
+                        $total_price += $d; // นำราคาสินค้ามาบวกเพิ่มกับราคารวมเดิม
+
+                        $count++;
+                    ?>
+                <tr>
+                    <td><?= $a ?></td>
+                    <td><?= $b ?></td>
+                    <td><?= number_format($c, 2, '.', ',') ?> </td>
+                    <td><?= $e ?></td>
+                    <td><?= number_format($d, 2, '.', ',') ?> บาท</td>
+                </tr>
+                    <?php 
+                        }
+                    ?>
+                <tr>
+                    <td colspan="4" class="text-right"><strong>Total Price:</strong></td>
+                    <td><strong><?= number_format($total_price, 2, '.', ',') ?> บาท </strong></td>
+                </tr>
             </tbody>
         </table>
     </div>
